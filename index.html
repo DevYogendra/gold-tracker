@@ -247,7 +247,7 @@
 
   async function tryFetchPrice(){
     const apis=[
-      async()=>{const r=await fetch('https://gold-api.com/price/XAU');const d=await r.json();if(!d.price)throw new Error();return{price:d.price,change:d.ch||0,changePct:d.chp||0};},
+      async()=>{const r=await fetch('https://api.gold-api.com/price/XAU');const d=await r.json();if(!d.price)throw new Error();return{price:d.price,change:d.ch||0,changePct:d.chp||0};},
       async()=>{const r=await fetch('https://api.frankfurter.app/latest?from=XAU&to=USD');const d=await r.json();if(!d.rates?.USD)throw new Error();return{price:d.rates.USD,change:0,changePct:0};},
       async()=>{const r=await fetch('https://api.coinbase.com/v2/exchange-rates?currency=XAU');const d=await r.json();const p=d.data?.rates?.USD?parseFloat(d.data.rates.USD):null;if(!p)throw new Error();return{price:p,change:0,changePct:0};}
     ];
