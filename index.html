@@ -71,6 +71,15 @@
     .theory-card p{font-size:11px;line-height:1.85;color:var(--text-muted)}
     .theory-link{display:inline-flex;margin-top:1rem;font-size:11px;color:var(--gold-light);text-decoration:none;border-bottom:0.5px solid transparent}
     .theory-link:hover{border-color:var(--gold-dim)}
+    #theory{max-width:1100px;margin:0 auto 3rem;padding:0 1.5rem}
+    .theory-callout{background:linear-gradient(180deg,var(--bg2),rgba(17,16,9,0.75));border:0.5px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.5rem}
+    .theory-callout h2{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:400;color:var(--gold-light);margin-bottom:0.4rem}
+    .theory-callout p{font-size:11px;line-height:1.9;color:var(--text-muted);max-width:760px}
+    .theory-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem}
+    .theory-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:var(--radius);border:0.5px solid var(--border-strong);font-size:11px;letter-spacing:0.06em;text-decoration:none;color:var(--text);background:transparent;transition:all 0.2s}
+    .theory-btn:hover{background:var(--bg3);border-color:var(--gold-dim);color:var(--gold-light)}
+    .theory-btn.primary{background:var(--gold-dim);border-color:var(--gold-dim);color:var(--gold-light)}
+    .theory-btn.primary:hover{background:var(--gold);color:var(--bg)}
     .status-bar{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--text-dim);margin-top:0.75rem}
     .status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
     .status-dot.loading{background:var(--gold-dim)}
@@ -78,7 +87,7 @@
     footer{border-top:0.5px solid var(--border);padding:1.25rem 2rem;text-align:center;font-size:10px;color:var(--text-dim);letter-spacing:0.06em}
     .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--bg3);border:0.5px solid var(--border-strong);color:var(--gold-light);font-size:11px;padding:10px 20px;border-radius:30px;transition:transform 0.3s ease;z-index:999}
     .toast.show{transform:translateX(-50%) translateY(0)}
-    @media(max-width:640px){header{padding:1rem}main{padding:1.5rem 1rem 3rem}.cc-price{font-size:1.4rem}}
+    @media(max-width:640px){header{padding:1rem}main{padding:1.5rem 1rem 3rem}#theory{padding:0 1rem 2rem}.cc-price{font-size:1.4rem}}
   </style>
 </head>
 <body>
@@ -190,10 +199,15 @@
 <div class="toast" id="toast">Link copied to clipboard</div>
 
 <section id="theory">
-  <h2>Theory</h2>
-  <p>Learn more about commodity pricing in our detailed document:</p>
-  <p><a href="https://devyogendra.github.io/gold-and-commodity-tracker/theory/" target="_blank" rel="noopener">Open the theory page</a></p>
-  <a href="theory/commodity_pricing_gold_silver.pdf" target="_blank">Download Commodity Pricing Theory (PDF)</a>
+  <div class="section-label">Theory</div>
+  <div class="theory-callout">
+    <h2>Go deeper on commodity pricing</h2>
+    <p>Use the full theory page for the core framework behind these charts, then open the PDF if you want the longer write-up and reference material.</p>
+    <div class="theory-actions">
+      <a class="theory-btn primary" href="https://devyogendra.github.io/gold-and-commodity-tracker/theory/" target="_blank" rel="noopener">Open Theory Page</a>
+      <a class="theory-btn" href="theory/commodity_pricing_gold_silver.pdf" target="_blank" rel="noopener">Download PDF</a>
+    </div>
+  </div>
 </section>
 
 <script>
