@@ -62,6 +62,15 @@
     .chart-wrap{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.5rem}
     .chart-legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;font-size:11px;color:var(--text-muted);align-items:center}
     .chart-canvas-wrap{position:relative;width:100%;height:320px}
+    .theory-panel{background:linear-gradient(180deg,var(--bg2),rgba(26,23,16,0.72));border:0.5px solid var(--border);border-radius:var(--radius);padding:1.35rem 1.5rem;margin-bottom:2rem}
+    .theory-title{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:0.35rem}
+    .theory-intro{font-size:11px;color:var(--text-muted);max-width:760px;line-height:1.9;margin-bottom:1rem}
+    .theory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .theory-card{background:rgba(0,0,0,0.12);border:0.5px solid var(--border);border-radius:var(--radius);padding:0.95rem 1rem}
+    .theory-card h3{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.55rem}
+    .theory-card p{font-size:11px;line-height:1.85;color:var(--text-muted)}
+    .theory-link{display:inline-flex;margin-top:1rem;font-size:11px;color:var(--gold-light);text-decoration:none;border-bottom:0.5px solid transparent}
+    .theory-link:hover{border-color:var(--gold-dim)}
     .status-bar{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--text-dim);margin-top:0.75rem}
     .status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
     .status-dot.loading{background:var(--gold-dim)}
@@ -141,6 +150,34 @@
       <div class="status-bar"><span class="status-dot" id="statusDot"></span><span id="statusText">Connecting…</span></div>
     </div>
   </div>
+
+  <div class="section-label">How To Read This</div>
+  <section class="theory-panel" aria-labelledby="theory-title">
+    <h2 class="theory-title" id="theory-title">A quick theory of the chart</h2>
+    <p class="theory-intro">
+      Commodity prices can swing hard in the short run, but over longer stretches they usually drift back toward production cost.
+      This tracker uses <strong>price divided by cost</strong> to show whether today’s market is near its economic anchor or trading at a large premium to it.
+    </p>
+    <div class="theory-grid">
+      <article class="theory-card">
+        <h3>Short Term</h3>
+        <p>Demand shocks, ETF flows, central-bank buying, geopolitics, and inventory tightness can move price much faster than supply can respond.</p>
+      </article>
+      <article class="theory-card">
+        <h3>Long Term</h3>
+        <p>Cost acts like gravity. If price stays far above cost, producers usually add supply. If price falls near or below cost, weaker supply gets cut and the market often rebalances upward.</p>
+      </article>
+      <article class="theory-card">
+        <h3>Reading The Ratio</h3>
+        <p>A high ratio means the commodity is expensive relative to its production base. A low ratio means price is closer to its cost floor, which often tells you more about cycle position than price alone.</p>
+      </article>
+      <article class="theory-card">
+        <h3>Use With Context</h3>
+        <p>Gold can stay rich when monetary demand dominates. Silver and oil are usually more sensitive to industrial and energy balances. The most useful comparison is live ratio versus historical median.</p>
+      </article>
+    </div>
+    <a class="theory-link" href="theory/">Read the full theory note →</a>
+  </section>
 
   <div class="section-label">Notes</div>
   <div class="mcard" style="line-height:1.9;color:var(--text-muted);font-size:11px;letter-spacing:0.03em;">
